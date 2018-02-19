@@ -3,7 +3,11 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-  def createArticle
+  def show
+    @articles = Article.find(params[:id])
+  end
+
+  def create
     post '/article/:article' do
       Article.create(article: params[:title, :content])
     end
