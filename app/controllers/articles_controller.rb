@@ -8,8 +8,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    post '/article/:article' do
-      Article.create(article: params[:title, :content])
-    end
+     @article  = Article.new(title: params[:title], content: params[:content])
   end
 end
