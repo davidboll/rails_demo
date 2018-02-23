@@ -16,8 +16,6 @@ Then(/^show me the page$/) do
   save_and_open_page
 end
 
-
-
 When("I am on the landing page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit root_path
 end
