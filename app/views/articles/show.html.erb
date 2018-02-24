@@ -8,10 +8,16 @@
   <%= @article.content %>
 </p>
 
-<%= form_with model: Comment.new, local: true do |f| %>
+<%= form_with model: [@article, Comment.new], local: true do |f| %>
+  <%= f.hidden_field :article_id, value: @article.id %>
   <%= f.label :email %>
   <%= f.email_field :email, id: 'comment_email' %>
   <%= f.label :body, value: 'Comment' %>
   <%= f.text_field :body, id: 'comment_body_comment' %>
   <%= f.submit %>
+<% end %>
+
+<% @article.comments.each do |comment| %>
+  <p><%= comment.body %></p>
+  <small>Submitted by: <%= comment.email %></small>
 <% end %>

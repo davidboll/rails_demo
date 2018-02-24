@@ -3,6 +3,6 @@ Given("I click on {string}") do |link_text|
 end
 
 Then("I shold see {string}") do |article_title|
-  article = Article.find_by_title article_title
-  expect(page_current_path).to eq article_path(article)
+  article = Article.find_by(title: article_title)
+  expect(page.current_path).to eq article_path(article)
 end

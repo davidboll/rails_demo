@@ -6,7 +6,6 @@ RSpec.describe Article, type: :model do
     it { is_expected.to have_db_column :title }
     it { is_expected.to have_db_column :content }
     it { is_expected.to have_db_column :author }
-
   end
 
   describe 'Validations' do
@@ -20,4 +19,7 @@ RSpec.describe Article, type: :model do
       expect(FactoryBot.create(:article)).to be_valid
     end
   end
+
+  it { is_expected.to have_many :comments}
+
 end

@@ -16,5 +16,5 @@ Feature: User can comment on article
     And I fill in "Email" with "david.boll@me.com"
     And I click on "Create Comment"
     Then I should be on "A breaking news item" page
-    And I shold see "Lol, best thing ever!"
+    And I should see "Lol, best thing ever!"
     And I should see "david.boll@me.com"
