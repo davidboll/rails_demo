@@ -8,6 +8,8 @@
   <%= @article.content %>
 </p>
 
+
+
 <%= form_with model: [@article, Comment.new], local: true do |f| %>
   <%= f.hidden_field :article_id, value: @article.id %>
   <%= f.label :email %>
@@ -19,5 +21,11 @@
 
 <% @article.comments.each do |comment| %>
   <p><%= comment.body %></p>
-  <small>Submitted by: <%= comment.email %></small>
+  <small>Submitted by:
+    <% if comment.email != ''%>
+      <%= comment.email %>
+    <% else %>
+      "Anonymous"
+    <% end %>
+  </small>
 <% end %>
