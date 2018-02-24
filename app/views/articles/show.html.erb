@@ -8,8 +8,6 @@
   <%= @article.content %>
 </p>
 
-
-
 <%= form_with model: [@article, Comment.new], local: true do |f| %>
   <%= f.hidden_field :article_id, value: @article.id %>
   <%= f.label :email %>
