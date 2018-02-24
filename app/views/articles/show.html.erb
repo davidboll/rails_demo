@@ -7,3 +7,11 @@
   <strong>Text:</strong>
   <%= @article.content %>
 </p>
+
+<%= form_with model: Comment.new, local: true do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email, id: 'comment_email' %>
+  <%= f.label :body, value: 'Comment' %>
+  <%= f.text_field :body, id: 'comment_body_comment' %>
+  <%= f.submit %>
+<% end %>
